@@ -1,2 +1,86 @@
 
 /* Your CSS Code here. */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9; /* Light background */
+    font-family: Arial, sans-serif;
+}
+
+#calculator {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 320px;
+}
+
+#input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 2em;
+    text-align: right;
+    border: none;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#buttons-grid {
+    display: grid;
+    /* 4 equally sized columns */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+}
+
+button {
+    padding: 20px 0;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+/* Number and Dot Buttons */
+#buttons-grid button:not(.operator):not(.equals) {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+/* Operator Buttons (Plus, Minus, etc.) */
+.operator {
+    background-color: #ff9500; /* Orange */
+    color: white;
+}
+
+/* Equals Button */
+.equals {
+    background-color: #5cb85c; /* Green */
+    color: white;
+    /* Span the last two columns: 
+       We combine the last two buttons (0 and .) into one row 
+       and then use grid-row to stack the last two cells */
+    grid-column: span 2; 
+}
+
+/* Specific styling to position the last row correctly */
+#block0 {
+    grid-column: span 2; 
+}
+
+/* Hover Effect */
+button:hover {
+    filter: brightness(0.9);
+}
+
+button:active {
+    filter: brightness(0.8);
+}
