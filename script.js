@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonsGrid.addEventListener('click', (event) => {
         const target = event.target;
         if (target.tagName !== 'BUTTON') {
-            return; 
+            return;
         }
 
         const buttonId = target.id;
@@ -36,11 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         else if (buttonId === 'ans') {
             try {
+                if (inputDisplay.value.trim() === '') {
+                    return;
+                }
+                
                 let result = eval(inputDisplay.value);
 
                 if (result === Infinity) {
                     inputDisplay.value = 'Infinity';
-                } 
+                }
                 else if (isNaN(result)) {
                     inputDisplay.value = 'NaN';
                 }
@@ -51,9 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 inputDisplay.value = 'Error';
             }
         }
-    });
-
-    document.getElementById('clr').addEventListener('click', () => {
-        inputDisplay.value = '';
     });
 });
