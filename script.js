@@ -1,4 +1,3 @@
-//your code here
 document.addEventListener('DOMContentLoaded', () => {
     const inputDisplay = document.getElementById('input');
     const buttonsGrid = document.getElementById('buttons-grid');

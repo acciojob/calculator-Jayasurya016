@@ -1,12 +1,10 @@
-
-/* Your CSS Code here. */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f4f4f9; /* Light background */
+    background-color: #f4f4f9;
     font-family: Arial, sans-serif;
 }
 
@@ -34,8 +32,7 @@ body {
 
 #buttons-grid {
     display: grid;
-    /* 4 equally sized columns */
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
@@ -48,35 +45,27 @@ button {
     transition: background-color 0.1s;
 }
 
-/* Number and Dot Buttons */
 #buttons-grid button:not(.operator):not(.equals) {
     background-color: #ffffff;
     color: #333;
     border: 1px solid #ddd;
 }
 
-/* Operator Buttons (Plus, Minus, etc.) */
 .operator {
-    background-color: #ff9500; /* Orange */
+    background-color: #ff9500;
     color: white;
 }
 
-/* Equals Button */
 .equals {
-    background-color: #5cb85c; /* Green */
+    background-color: #5cb85c;
     color: white;
-    /* Span the last two columns: 
-       We combine the last two buttons (0 and .) into one row 
-       and then use grid-row to stack the last two cells */
-    grid-column: span 2; 
+    grid-column: span 2;
 }
 
-/* Specific styling to position the last row correctly */
 #block0 {
-    grid-column: span 2; 
+    grid-column: span 2;
 }
 
-/* Hover Effect */
 button:hover {
     filter: brightness(0.9);
 }
